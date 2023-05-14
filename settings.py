@@ -1,6 +1,11 @@
+# Project configuration file
+
 import os
-from dotenv import load_dotenv
+import tomllib
 
-load_dotenv('../credentials/.env')
+path_config_file = f"{os.getenv('HOME')}/credentials/dfsn-config.toml"
 
-GCP_BIGQUERY = os.getenv('SKV_GCP_BIGQUERY')
+with open(path_config_file, "rb") as f:
+    config = tomllib.load(f)
+
+BIGQUERY = config['bigquery']
