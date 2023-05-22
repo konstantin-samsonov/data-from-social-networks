@@ -13,11 +13,6 @@ import googleapiclient.discovery
 from google.oauth2 import service_account
 from settings import BIGQUERY
 
-logger = logging.getLogger('logger')
-handler = logging.FileHandler('youtube_channels.log')
-handler.setLevel(logging.DEBUG)
-logger.addHandler(handler)
-
 
 def yt_connect():
     """ Return connect to YouTube API """
