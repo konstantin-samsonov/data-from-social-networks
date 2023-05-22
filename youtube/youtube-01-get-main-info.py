@@ -83,14 +83,8 @@ def yt_get_channel_info(yt_connect=None, channel_id=None,
         branding_targets = ['keywords', 'moderateComments']
         branding_results = parse_dict(item=branding_item, target=branding_targets)
 
-        # auditDetails
-        audit_item = item['auditDetails']
-        audit_targets = ['overallGoodStanding']
-        audit_results = parse_dict(item=audit_item, target=audit_targets)
-
         row = {**main, **snippet_results, **content_results,
-               **statistics_results, **status_results, **branding_results,
-               **audit_results
+               **statistics_results, **status_results, **branding_results
                }
 
         results.append(row)
