@@ -9,3 +9,4 @@ with open(path_config_file, "rb") as f:
     config = tomllib.load(f)
 
 BIGQUERY = config['bigquery']
+GCP = config['gcp']
